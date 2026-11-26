@@ -1,0 +1,47 @@
+<mat-sidenav-container class="home-page-sidenav-container " autosize>
+    <mat-sidenav #sidenavStart
+                 [fixedInViewport]="true"
+                 mode="side" position="start" opened class="sidenav-start tertiary">
+        <mat-nav-list>
+            <!-- Used to display some infos for quick actions. i.e. icons of sites or domains to jump to. -->
+            <a [routerLink]="['./landing-page']" mat-list-item>
+                <span class="entry"><mat-icon class="material-symbols">dashboard</mat-icon>
+                @if (!sideNavCollapsed) {
+                    <span>Overview</span>
+                }
+                </span>
+            </a>
+
+            <!--
+            <a [routerLink]="['./warehouses']" [queryParams]="{withCount: true, limit: 10, sortBy: 'focal_point', sortDirection: 'asc'}" mat-list-item>
+                <span class="entry"><mat-icon class="material-symbols-outlined">list_alt</mat-icon>
+                    @if (!sideNavCollapsed) {
+                        <span>Title of function</span>
+                    }
+                </span>
+            </a>
+
+            <a [routerLink]="['./new-warehouse']" mat-list-item>
+                <span class="entry"><mat-icon  class="material-symbols-outlined">add_box</mat-icon>
+                @if (!sideNavCollapsed) {
+                    <span>Title of function</span>
+                }
+                </span>
+            </a>
+            -->
+
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav #sidenavEnd class="sidenav-end secondary"
+                 [fixedInViewport]="true"
+                 mode="over" position="end" >
+        <app-apps-palette></app-apps-palette>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <app-toolbar [withSideBar]="true" [withEndSideBar]="true"
+                     (toggleEndSideBar)="sidenavEnd.toggle();"
+                     (toggleStartSideBar)="toggleSideNavStart()"> <!-- sidenavStart.toggle(); -->
+        </app-toolbar>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

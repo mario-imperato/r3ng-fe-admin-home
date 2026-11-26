@@ -1,0 +1,40 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin theme() {
+  .edenred {
+    @include mat.theme((
+            color: (primary: mat.$blue-palette, secondary: mat.$orange-palette, tertiary: mat.$red-palette, ),
+            typography: Roboto,
+            density: 0,
+    ));
+
+    @include mat.theme-overrides((corner-full: 10px));
+
+    .primary {
+      @include mat.theme(( color: mat.$blue-palette, ));
+      @include mat.theme-overrides((corner-full: 10px));
+    }
+
+    .tertiary-lighter {
+      @include mat.theme((color: mat.$blue-palette));
+      @include mat.theme-overrides((corner-full: 10px));
+      background-color: var(--mat-sys-inverse-primary);
+    }
+
+    .secondary {
+      @include mat.theme((color: mat.$orange-palette));
+      @include mat.theme-overrides((corner-full: 10px));
+    }
+
+    .tertiary {
+      @include mat.theme((color: mat.$red-palette));
+      @include mat.theme-overrides((corner-full: 10px));
+    }
+
+    .error {
+      @include mat.theme((color: mat.$red-palette));
+      @include mat.theme-overrides((corner-full: 0px));
+    }
+  }
+}

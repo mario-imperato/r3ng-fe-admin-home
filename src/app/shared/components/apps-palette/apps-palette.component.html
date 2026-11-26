@@ -1,0 +1,63 @@
+
+<div class="apps-palette">
+    <app-profile-image></app-profile-image>
+
+    @if (userHasAnyRoleForApps(appStore.user())) {
+    <mat-divider></mat-divider>
+    @for (i of apps; track i.id)  {
+    @if (!isCurrentApp(i.sys_name) && userHasAnyRoleForApp(appStore.user(), i.id)) {
+    <div>
+        @if (!i.disabled) {
+            <a href="{{i.url}}">
+                <mat-icon
+                        [matTooltipClass]="'app-accent'"
+                        [matTooltip]="i.hint"
+                        matTooltipHideDelay="50000"
+                        matTooltipPosition="right"
+                >{{i.icon}}</mat-icon>
+            </a>
+        } @else {
+            <mat-icon
+                    class="disabled"
+                    [matTooltipClass]="'app-accent'"
+                    [matTooltip]="i.hint"
+                    matTooltipHideDelay="50000"
+                    matTooltipPosition="right"
+            >{{i.icon}}</mat-icon>
+        }
+    </div>
+    }
+    }
+    }
+
+    <!--
+<mat-divider></mat-divider>
+
+<div>
+    <a href="my-r3ds9">
+        <mat-icon
+                [matTooltipClass]="'app-accent'"
+                [matTooltip]="'Profilo Utente'"
+                matTooltipHideDelay="50000"
+                matTooltipPosition="right"
+        >person
+        </mat-icon>
+    </a>
+</div>
+
+<div>
+    <a (click)="logOut()" href="javascript:void(0)">
+        <mat-icon
+                [matTooltipClass]="'app-accent'"
+                [matTooltip]="'Log-out'"
+                matTooltipHideDelay="50000"
+                matTooltipPosition="right"
+        >power_settings_new
+        </mat-icon>
+    </a>
+</div>
+-->
+
+</div>
+
+

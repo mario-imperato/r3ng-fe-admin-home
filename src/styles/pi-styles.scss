@@ -1,0 +1,43 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use 'pi-theme-colors' as pi-theme;
+
+@mixin theme() {
+  .pi {
+    @include mat.theme((
+        color: (primary: pi-theme.$primary-palette, tertiary: pi-theme.$tertiary-palette, ),
+        typography: Roboto,
+        density: 0,
+    ));
+
+    @include mat.theme-overrides((corner-full: 10px));
+
+    .primary {
+      @include mat.theme((color: pi-theme.$primary-palette));
+      @include mat.theme-overrides((corner-full: 10px));
+
+    }
+
+    .tertiary-lighter {
+      @include mat.theme((color: pi-theme.$primary-palette));
+      @include mat.theme-overrides((corner-full: 10px));
+      background-color: pi-theme.$pi-light-yellow;
+      // background-color: var(--mat-sys-secondary-container)
+    }
+
+    .secondary {
+      @include mat.theme((color: pi-theme.$secondary-palette));
+      @include mat.theme-overrides((corner-full: 10px));
+    }
+
+    .tertiary {
+      @include mat.theme((color: pi-theme.$tertiary-palette));
+      @include mat.theme-overrides((corner-full: 10px));
+    }
+
+    .error {
+      @include mat.theme((color: pi-theme.$error-palette));
+      @include mat.theme-overrides((corner-full: 0px));
+    }
+  }
+}

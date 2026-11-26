@@ -1,0 +1,44 @@
+/*
+.app-data-table-action-bar {
+  display: flex;
+  flex-direction:row;
+  justify-content: space-between;
+}
+*/
+
+@use '@angular/material' as mat;
+
+.app-simple-data-table {
+  @include mat.table-overrides((
+          header-headline-color: var(--mat-sys-primary),
+          header-headline-size: 1.2em,
+  ));
+
+  .datatable-column-action-icons {
+    display: flex;
+    flex-direction:row;
+    gap: 5px;
+    justify-content: flex-end;
+  }
+
+  .datatable-column-action-icons mat-icon {
+    cursor: pointer;
+  }
+
+  .datatable-column-action-icons mat-icon.datatable-icon-action-warn {
+    color:  red;
+  }
+
+  .mat-mdc-table .mat-row.mat-row-norecord-found td.mat-cell  {
+    padding: 2em;
+    border-bottom: none;
+  }
+
+  .mat-mdc-row:hover {
+    .mat-mdc-cell {
+      color: var(--mat-sys-on-surface);
+      background-color: var(--mat-sys-inverse-on-surface);
+    }
+  }
+}
+

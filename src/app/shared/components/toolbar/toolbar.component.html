@@ -1,0 +1,40 @@
+
+<mat-toolbar [color]="'primary'" class="app-toolbar primary">
+    @if (withSideBar) {
+    <button (click)='toggleStartSideBar.emit()' matIconButton class="icon-button">
+        <mat-icon>menu</mat-icon>
+    </button>
+    }
+    <ng-container >
+
+        <span class="toolbar-title">{{ toolBarTitle }}</span>
+        <!--
+        <button  mat-icon-button  aria-label="Menu icon">
+            <mat-icon>public</mat-icon>
+        </button>
+        -->
+    </ng-container>
+    <span class="navbar-spacer"></span>
+    <!--
+    <ng-container *ngIf="{user$: appStore.user$ | async} as user" >
+        <span style='margin-right: 15px'>{{ user.user$.nickname }}</span>
+        <div [matMenuTriggerFor]="menu" class='mat-card-avatar' [ngStyle]="{backgroundImage: avatarImg }"></div>
+    </ng-container>
+    -->
+    @if (withEndSideBar) {
+    <button matIconButton class="icon-button" (click)='toggleEndSideBar.emit()'><mat-icon>more_vert</mat-icon></button>
+    }
+</mat-toolbar>
+<!--
+<mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="logOut()">
+        <mat-icon>power_settings_new</mat-icon>
+        <span>Log-out</span>
+    </button>
+    <button mat-menu-item disabled>
+        <mat-icon>person</mat-icon>
+        <span>Profilo</span>
+    </button>
+</mat-menu>
+-->
+

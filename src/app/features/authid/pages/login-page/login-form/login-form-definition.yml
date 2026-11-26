@@ -1,0 +1,23 @@
+forms:
+  - name: login-form
+    main: true
+    layout: grid
+    columns: 1
+    objs:
+      - type: field
+        appearance: outline
+        field-type: text
+        name: nickname
+        place-holder: Username
+        col-span: 1
+        validators:
+          - id: required
+      - type: field
+        appearance: outline
+        field-type: password
+        name: creds
+        place-holder: Parola Chiave
+        col-span: 1
+        validators:
+          - id: required
+        # css-class: field-status

@@ -1,0 +1,36 @@
+@use '@angular/material' as mat;
+
+.navbar-spacer {
+  flex: 1 1 auto;
+}
+
+:host.app-toolbar-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.app-toolbar {
+  @include mat.toolbar-overrides((
+          container-background-color: var(--mat-sys-primary),
+          container-text-color: var(--mat-sys-on-primary),
+  ));
+
+  .toolbar-title {
+/*    font-size: var(--mat-sys-title-large-size);
+    line-height: 0;*/
+  }
+
+  .toolbar-sub-title {
+/*      font-size: var(--mat-sys-label-medium-size);*/
+    font-size: 1rem;
+  }
+}
+
+.app-toolbar .icon-button {
+  @include mat.icon-button-overrides((
+          icon-color: var(--mat-sys-on-primary),
+  ));
+}

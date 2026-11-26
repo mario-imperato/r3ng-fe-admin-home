@@ -1,0 +1,116 @@
+
+// Include theming for Angular Material with `mat.theme()`.
+// This Sass mixin will define CSS variables that are used for styling Angular Material
+// components according to the Material 3 design spec.
+// Learn more about theming and how to use it for your application's
+// custom components at https://material.angular.dev/guide/theming
+//
+@use '@angular/material' as mat;
+@use 'sass:color';
+@use 'pi-theme-colors' as pi-theme;
+@use "crud-styles.scss" as crud-styles;
+@use "greeneish-styles.scss" as greeneish-styles;
+@use "edenred-styles.scss" as edenred-styles;
+@use "pi-styles.scss" as pi-styles;
+@use "cyan-orange-styles.scss" as cyan-orange-styles;
+
+html {
+
+}
+
+@include pi-styles.theme();
+@include greeneish-styles.theme();
+@include edenred-styles.theme();
+@include cyan-orange-styles.theme();
+
+
+
+
+
+/*
+.secondary {
+  @include mat.theme((color: mat.$azure-palette));
+  @include mat.theme-overrides((corner-full: 0px));
+}
+
+.tertiary {
+  @include mat.theme((color: mat.$azure-palette));
+  @include mat.theme-overrides((corner-full: 0px));
+}
+
+.error {
+  @include mat.theme((color: mat.$red-palette));
+  @include mat.theme-overrides((corner-full: 0px));
+}
+
+*/
+@include mat.typography-hierarchy(
+   mat.define-theme(
+     (
+        typography: (
+          use-system-variables: true,
+          system-variables-prefix: mat-sys
+        )
+     )
+   )
+);
+
+body {
+  // Default the application to a light color theme. This can be changed to
+  // `dark` to enable the dark color theme, or to `light dark` to defer to the
+  // user's system settings.
+  color-scheme: light;
+
+  // Set a default background, font and text colors for the application using
+  // Angular Material's system-level CSS variables. Learn more about these
+  // variables at https://material.angular.dev/guide/system-variables
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+
+  // Reset the user agent margin.
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  height: 100%;
+}
+/* You can add global styles to this file, and also import other style files */
+
+html { height: 100%; }
+
+.with-sports-background-sidebar {
+  background-image:
+          url(../styles/assets/console/sports/img_150x150/hicon_001.jpg),
+          url(../styles/assets/console/sports/img_150x150/hicon_002.jpg),
+          url(../styles/assets/console/sports/img_150x150/hicon_003.jpg),
+          url(../styles/assets/console/sports/img_150x150/hicon_004.jpg),
+          url(../styles/assets/console/sports/img_150x150/hicon_005.jpg),
+          url(../styles/assets/console/sports/img_150x150/hicon_006.jpg),
+          url(../styles/assets/console/sports/img_150x150/hicon_007.jpg);
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  //background-size: 100%;
+  background-position: 0 65px, 0 215px, 0 365px, 0 515px, 0 665px, 0 815px, 0 965px;
+  min-height: 100%;
+}
+
+.with-sports-background-sidebar  {
+  .main-canvas {
+    margin-left : 150px;
+    flex: 1;
+    /*margin-top: 100px;*/
+    /*margin-right : 50px;*/
+    /*padding-top: 100px;*/
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .with-sports-background-sidebar {
+    background: unset;
+    .main-canvas {
+      margin: 0;
+      padding-top: 0px;
+    }
+  }
+}
+
+@include crud-styles.cruds()
+

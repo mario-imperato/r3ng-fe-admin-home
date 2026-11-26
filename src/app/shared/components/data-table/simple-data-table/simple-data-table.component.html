@@ -1,0 +1,39 @@
+
+<div class='app-simple-data-table'>
+        <mat-table
+                matSort
+                matSortDisableClear
+                [dataSource]="actualDataSource()"
+        >
+
+            @for (colDef of tableDefinition!.columnDefinitions; track colDef.columnId) {
+            <ng-container [matColumnDef]="colDef.columnId" >
+                @if (colDef.sortable) {
+                    <mat-header-cell *matHeaderCellDef [class]="colDef.columnCellClasses" mat-sort-header > {{colDef.columnHeader}} </mat-header-cell>
+                } @else {
+                    <mat-header-cell *matHeaderCellDef [class]="colDef.columnCellClasses" > {{colDef.columnHeader}} </mat-header-cell>
+                }
+
+                @if (colDef.columnType == 'simple') {
+                    <mat-cell *matCellDef="let element"> {{colDef.getColumnValue(element) | dynamic: colDef.pipeTransformer: colDef.pipeTransformerArgs}}</mat-cell>
+                }
+                @if (colDef.columnType == 'action') {
+                    <mat-cell mat-cell *matCellDef="let element" [class]="colDef.columnCellClasses">
+                        @for (command of colDef.commands; track command.command) {
+                            <mat-icon (click)="onColumnAction(colDef, command, element)" [class]="command.className">{{command.actionIcon}}</mat-icon>
+                        }
+                    </mat-cell>
+                }
+            </ng-container>
+
+         }
+            <mat-header-row *matHeaderRowDef="tableDefinition!.displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: tableDefinition!.displayedColumns" ></mat-row>
+         <tr class="mat-row mat-row-norecord-found" *matNoDataRow>
+             <td class="mat-cell" >Nessun record corrispondente ai filtri impostati</td>
+         </tr>
+
+        </mat-table>
+</div>
+
+

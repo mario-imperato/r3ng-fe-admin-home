@@ -1,0 +1,20 @@
+.app-api-message {
+  margin-bottom: 20px;
+
+  label {
+    display: flex
+  }
+
+  .text-success {
+    color: green
+  }
+
+  .text-error {
+    color: darkred;
+  }
+
+  .text-warn {
+    color: darkred;
+  }
+}
+

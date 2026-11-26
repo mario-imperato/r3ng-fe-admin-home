@@ -1,0 +1,40 @@
+<!--
+<button mat-icon-button color='accent' (click)='inputFile.click()' >
+    <mat-icon>image</mat-icon>
+</button>
+<button mat-icon-button  color='accent' [disabled]="!imageInfo.fileName" (click)='upload()'>
+
+<mat-icon>upload</mat-icon>
+</button>
+-->
+
+
+<!--
+<input type="file" id="inputFile" style="display: none" #inputFile (change)="fileChangeEvent($event)" />
+-->
+
+<!--
+<app-request-state-progress [state]="uploadProgress"></app-request-state-progress>
+-->
+
+<div class="cropper-action-bar">
+    <mat-icon color='accent' (click)='upload()'>upload</mat-icon>
+    <mat-icon color='primary' (click)='close()'>close</mat-icon>
+</div>
+<image-cropper
+        [imageChangedEvent]="imageChangedEvent"
+        [imageFile]="imageInfo.fileObj"
+        [maintainAspectRatio]="this.maintainAspectRatio"
+        [aspectRatio]="this.aspectRatio"
+        [format]="this.format"
+        [resizeToWidth]="this.width"
+        [alignImage]="'center'"
+        [resizeToHeight]="this.height"
+        (imageCropped)="imageCropped($event)"
+        (imageLoaded)="imageLoaded($event)"
+        (cropperReady)="cropperReady()"
+        (loadImageFailed)="loadImageFailed()"
+
+        output="blob"
+></image-cropper>
+

@@ -1,0 +1,16 @@
+<div >
+    <mat-chip-listbox  >
+        @for (o of options; track o) {
+        <mat-chip-option [id]="o.id" [color]="o.color"
+                         [hidden]="!isHidden(o.id)"
+                         [selected]="isSelected(o.id)" [disabled]="isDisabled(o.id)" [highlighted]="isHighlighted(o.id)"
+                         (selectionChange)="onSelectionChange($event)">{{o.title}}</mat-chip-option>
+        }
+    </mat-chip-listbox>
+    <section class="mat-headline-6" style="border-top: 1px solid black; margin-top: 10px; margin-bottom: 20px; padding-top: 5px; width: 100%">
+        {{selectedTitle()}}
+        @if (selectedSubTitle()) {
+        <br/><span class="mat-subtitle-1">{{selectedSubTitle()}}</span>
+        }
+    </section>
+</div>

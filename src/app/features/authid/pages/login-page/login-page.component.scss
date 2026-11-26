@@ -1,0 +1,62 @@
+
+/*
+ .example-form {
+  min-width: 150px;
+  max-width: 30%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.example-radio-group {
+  display: flex;
+  flex-direction: row;
+  margin: 15px 0;
+  align-items: flex-start;
+  flex-flow: wrap;
+}
+
+.example-radio-button {
+  margin: 5px;
+  width: 200px;
+  background-color: aqua;
+}
+ */
+
+/*.page-layout-1 {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  height: 100%;
+}*/
+
+//.page-layout-1-side-bar {
+//    max-width: 150px;
+//    width: 20%;
+//}
+
+
+.login-page .main-canvas {
+  padding-top: 60px;
+
+  .app-crud-form-page-canvas {
+    min-width: 150px;
+    max-width: 50%;
+  }
+}
+
+.app-login-form {
+  min-width: 150px;
+  max-width: 50%;
+}
+
+@media screen and (max-width: 992px) {
+  .app-login-form {
+    max-width: 100%;
+  }
+}

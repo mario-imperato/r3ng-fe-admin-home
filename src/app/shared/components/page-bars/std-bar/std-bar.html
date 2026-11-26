@@ -1,0 +1,8 @@
+<div class="app-std-bar">
+    @for (act of actions(); track act.command) {
+        <div class="action {{act.status}}" (click)="exec(act.command)">
+            <mat-icon  matTooltip="{{act.label}}" class="material-icons-outlined" fontIcon="{{act.icon}}" ></mat-icon>
+            <div class="label">{{act.label}}</div>
+        </div>
+    }
+</div>

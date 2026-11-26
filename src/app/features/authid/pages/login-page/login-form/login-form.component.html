@@ -1,0 +1,65 @@
+
+
+<div class="app-login-form">
+
+<app-api-message [message]="componentAppStatus.description"
+                 [mood]="componentAppStatus.status"></app-api-message>
+
+<!-- @tpm-schematics:start-region("login-form-component-html-head") -->
+<!-- @tpm-schematics:end-region("login-form-component-html-head") -->
+<form (submit)="onSubmitAction($event)">
+<div class="app-login-form-layout">
+    <!-- @tpm-schematics:start-region("login-form-component-html-bof-layout") -->
+    <!-- @tpm-schematics:end-region("login-form-component-html-bof-layout") -->
+    <mat-form-field appearance="outline" >
+        <mat-label>Username</mat-label>
+        <input  matInput [formField]="loginForm.nickname" placeholder="Username" />
+        @for (error of formError(loginForm.nickname()); track $index) {
+             <mat-error><span>{{ error }}</span></mat-error>
+        }
+
+        <!-- @tpm-schematics:start-region("form-field-input-section-nickname-region") -->
+        <!-- @tpm-schematics:end-region("form-field-input-section-nickname-region") -->
+
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" >
+        <mat-label>Parola Chiave</mat-label>
+        <input  matInput
+                type="password"
+                placeholder="Parola Chiave"
+                [formField]="loginForm.creds"
+                [type]="credsFieldHide ? 'password' : 'text'"
+                appInputPasswd
+        />
+        <mat-icon style='cursor: pointer' matSuffix
+                  (click)="credsFieldHide = !credsFieldHide">{{credsFieldHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        @for (error of formError(loginForm.creds()); track $index) {
+             <mat-error><span>{{ error }}</span></mat-error>
+        }
+        <!-- @tpm-schematics:start-region("form-field-input-section-creds-region") -->
+        <!-- @tpm-schematics:end-region("form-field-input-section-creds-region") -->
+    </mat-form-field>
+
+
+<!-- @tpm-schematics:start-region("form-action-bar-region") -->
+<div class="action-bar " >
+<button mat-raised-button type="button" (click)="onClearAction()">Clear</button>
+<button mat-raised-button color="primary" type="submit" [disabled]="loginForm().invalid() || loginForm().submitting()">
+   @if (loginForm().submitting()) {
+      Logging in...
+   } @else {
+      Log in
+   }
+</button>
+</div>
+<!-- @tpm-schematics:end-region("form-action-bar-region") -->
+
+    <!-- @tpm-schematics:start-region("login-form-component-html-eof-layout") -->
+    <!-- @tpm-schematics:end-region("login-form-component-html-eof-layout") -->
+</div>
+</form>
+
+<!-- @tpm-schematics:start-region("login-form-component-html-tail") -->
+<!-- @tpm-schematics:end-region("login-form-component-html-tail") -->
+</div>

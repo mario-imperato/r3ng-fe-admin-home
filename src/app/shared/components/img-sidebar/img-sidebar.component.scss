@@ -1,0 +1,23 @@
+:host {
+  max-width: 150px;
+  width: 20%;
+  height: 100%;
+  background-image:
+
+      url(../../../../styles/assets/console/sports/img_150x150/hicon_001.jpg),
+      url(../../../../styles/assets/console/sports/img_150x150/hicon_002.jpg),
+      url(../../../../styles/assets/console/sports/img_150x150/hicon_003.jpg),
+      url(../../../../styles/assets/console/sports/img_150x150/hicon_004.jpg),
+      url(../../../../styles/assets/console/sports/img_150x150/hicon_005.jpg),
+      url(../../../../styles/assets/console/sports/img_150x150/hicon_006.jpg),
+      url(../../../../styles/assets/console/sports/img_150x150/hicon_007.jpg);
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-size: 100%;
+  background-position: 0 0, 0 150px, 0 300px, 0 450px, 0 600px, 0 750px, 0 900px;
+}
+
+@media screen and (max-width: 992px) {
+  :host {
+    display: none;
+  }
+}

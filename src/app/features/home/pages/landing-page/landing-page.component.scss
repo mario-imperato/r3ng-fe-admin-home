@@ -1,0 +1,48 @@
+@use '@angular/material' as mat;
+
+.landing-page {
+  margin: 20px;
+  mat-card-content {
+    min-height: 70px;
+    mat-icon {
+      width: 230px; height: 230px; display: block; font-size: 230px; color: var(--mat-sys-primary); border-bottom: 1px solid black; border-top: 1px solid black;
+    }
+  }
+
+  mat-card-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+
+/*
+.tertiary {
+  @include mat.button-overrides((
+          filled-container-color: var(--mat-sys-tertiary),
+  ));
+}
+
+
+.secondary {
+  @include mat.button-overrides((
+          filled-container-color: var(--mat-sys-secondary),
+          filled-label-text-color: var(--mat-sys-on-secondary),
+  ));
+}
+
+.primary {
+  @include mat.button-overrides((
+          filled-container-color: var(--mat-sys-primary),
+  ));
+}*/
+
+.example-icon {
+  width: 230px; height: 230px; display: block; font-size: 230px; color: var(--mat-sys-primary); border-bottom: 1px solid black; border-top: 1px solid black;
+}
+
+.example-actions {
+    display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}

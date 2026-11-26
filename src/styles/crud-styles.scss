@@ -1,0 +1,124 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin cruds() {
+
+  .app-std-page {
+    .canvas {
+      padding: 30px 30px;
+    }
+
+    .header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+      background-color: var(--mat-sys-tertiary-fixed-dim);
+      border-bottom: 1px solid var(--mat-sys-tertiary);
+      color: #555;
+
+      .title {
+        font: var(--mat-sys-body-large);
+        // font-weight: bold;
+      }
+
+      .actions {
+        color: var(--mat-sys-primary);
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+
+        .icon-with-bottom-label {
+          border-left: 1px solid var(--mat-sys-primary);
+          padding: 0 10px;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          min-width: 90px;
+
+          /*
+          mat-icon {
+            font-size: 30px; width: 30px; height: 30px;
+          }
+          */
+        }
+      }
+    }
+  }
+
+  .app-form-header {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    color: #aaa;
+
+    .app-form-title {
+      font: var(--mat-sys-body-large)
+    }
+  }
+
+  .app-crud-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+
+    // background-color: var(--mat-sys-inverse-secondary);
+    // background-color: var(--mat-sys-inverse-primary);
+    background-color: var(--mat-sys-tertiary-fixed-dim);
+    border-bottom: 1px solid var(--mat-sys-primary);
+    color: #555;
+
+    div.app-form-title {
+      font-size: var(--mat-sys-title-medium-size);
+      font-weight: var(--mat-sys-title-medium-weight);
+      margin-bottom: 0;
+
+      span {
+        font-size: var(--mat-sys-label-small-size);
+      }
+    }
+
+    .actions {
+      color: var(--mat-sys-on-surface);
+      cursor: pointer;
+      // transform: scale(1.5);
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+
+      /*      mat-icon {
+              font-size: 2rem;
+            }*/
+    }
+
+  }
+
+  .app-crud-actions-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    background-color: var(--mat-sys-tertiary-fixed-dim);
+    border-bottom: 1px solid var(--mat-sys-primary);
+
+    .actions {
+      cursor: pointer;
+      // transform: scale(1.5);
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+
+      /*      mat-icon {
+              font-size: 2rem;
+            }*/
+    }
+  }
+
+  .app-crud-form-page-canvas {
+    padding: 30px 30px;
+  }
+}

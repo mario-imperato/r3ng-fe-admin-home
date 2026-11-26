@@ -1,0 +1,40 @@
+{
+  "name": "user",
+  "properties": {
+    "folder-path": "./user",
+    "struct-name": "User"
+  },
+  "attributes": [
+    {
+      "name": "oId",
+      "type": "object-id",
+      "tags": [
+        "json",
+        "-",
+        "bson",
+        "_id"
+      ],
+      "queryable": true
+    },
+    {
+      "name": "userId",
+      "type": "string",
+      "queryable": true
+    },
+    {
+      "name": "objType",
+      "type": "string",
+      "queryable": true
+    },
+    {
+      "name": "sysinfo",
+      "type": "ref-struct",
+      "struct-ref": {
+        "struct-name": "SysInfoDTO",
+        "is-external": true,
+        "package": "../../../commons/types/commons-types"
+      }
+    }
+  ]
+}
+
